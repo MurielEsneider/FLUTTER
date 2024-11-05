@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/screen/suma.dart';
+import 'package:flutter_application_4/screen/registro.dart';
+import 'package:flutter_application_4/screen/login.dart';
 
 class menuOption extends StatefulWidget {
   const menuOption({super.key});
@@ -12,8 +14,9 @@ class _menuOptionState extends State<menuOption> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color.fromARGB(255, 0, 39, 33),
         appBar: AppBar(
-          backgroundColor: Colors.red[400],
+          backgroundColor: const Color.fromARGB(255, 1, 85, 67),
           foregroundColor: Colors.white,
           title: Text("Menu Opcion"),
         ),
@@ -41,21 +44,30 @@ class _menuOptionState extends State<menuOption> {
               title: Text("Calculadora"),
               leading: Icon(Icons.account_tree_outlined),
               trailing: Icon(Icons.arrow_circle_right_outlined),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => suma()));
+              },
             )),
             Card(
                 child: ListTile(
               title: Text("Registro"),
               leading: Icon(Icons.account_circle_sharp),
               trailing: Icon(Icons.arrow_circle_right_outlined),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => registerUser()));
+              },
             )),
             Card(
                 child: ListTile(
               title: Text("Login"),
               leading: Icon(Icons.add_card_outlined),
               trailing: Icon(Icons.arrow_circle_right_outlined),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => login()));
+              },
             ))
           ],
         ));
